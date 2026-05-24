@@ -40,7 +40,7 @@ export default function Home() {
               style={{ color: "var(--text-muted)" }}
             >
               Put a number on what manual work actually costs you — then see whether
-              automating with n8n, Make.com, or Zapier genuinely pays off.
+              automating with n8n/zapier/LLM's actually pays off.
             </p>
             <div className="mt-6">
               <StarCounter />
