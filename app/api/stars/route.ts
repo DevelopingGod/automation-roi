@@ -6,8 +6,9 @@ const STAR_KEY = "roi-tool-stars";
 // Redis is only instantiated when both env vars are present.
 // Gracefully returns 0 in local dev without them.
 function getRedis(): Redis | null {
-  const url   = process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  // Vercel's Upstash integration injects STORAGE_KV_REST_API_URL / TOKEN
+  const url   = process.env.STORAGE_KV_REST_API_URL   ?? process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.STORAGE_KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
   if (!url || !token) return null;
   return new Redis({ url, token });
 }
