@@ -32,7 +32,7 @@ export default function Home() {
               className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl"
               style={{ color: "var(--text-primary)" }}
             >
-              Every Hour Has a Price.{" "}
+              Every Hour Has a Price and Every Business Runs on Costing.{" "}
               <span style={{ color: "var(--accent)" }}>Do You Know Yours?</span>
             </h1>
             <p
