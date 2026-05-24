@@ -12,6 +12,8 @@ import {
   Globe,
   ShieldCheck,
   Brain,
+  BarChart3,
+  FileSpreadsheet,
 } from "lucide-react";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
@@ -96,50 +98,48 @@ export default function AboutPage() {
                 What is the Automation ROI Calculator?
               </h1>
               <p className="text-base leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                A free, client-side financial tool that helps freelancers and agencies answer one
-                critical question:{" "}
+                A free, client-side financial tool built for freelancers, agencies, and business
+                owners who want a clear answer to one question:{" "}
                 <strong style={{ color: "var(--text-secondary)" }}>
-                  is automating my repetitive tasks actually worth paying for?
+                  does automating my work actually make financial sense?
                 </strong>{" "}
-                No login, no data sent anywhere, no strings attached.
+                Two modes — a quick slider estimate and a full business deep dive. No login,
+                no data sent anywhere, no strings attached.
               </p>
             </div>
 
             {/* How to use */}
             <Section title="How to use it">
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                The calculator has three inputs. Adjust them with the sliders or click the value
-                badge to type a precise number:
+                Pick a mode at the top of the calculator, then fill in your numbers:
               </p>
               <div className="flex flex-col gap-3">
                 <Card
-                  icon={DollarSign}
-                  title="1. Enter your Hourly Rate"
-                  body="Your billable rate, your salary-equivalent per hour, or any opportunity-cost rate that reflects what your time is worth."
+                  icon={SlidersHorizontal}
+                  title="Simple Mode — quick estimate"
+                  body="Three sliders: your hourly rate, manual hours per week, and automation cost per month. Drag or click the badge to type a number. Results update instantly."
                 />
                 <Card
-                  icon={Clock}
-                  title="2. Enter Manual Hours per Week"
-                  body="How many hours each week you spend on repetitive, automatable tasks — data entry, report generation, file transfers, follow-up emails, etc."
-                />
-                <Card
-                  icon={Zap}
-                  title="3. Enter Automation Cost per Month"
-                  body="The monthly subscription cost of the automation tool you're considering — n8n Cloud, Make.com, Zapier, or any other platform."
+                  icon={BarChart3}
+                  title="Business Deep Dive — full analysis"
+                  body="Build a detailed cost model with three editable cards — Manual Costing, AI/Automation Costing, and Revenue. Line items support arithmetic formulas. Produces 11 profit and ROI metrics."
                 />
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                Results update in real time. Use the{" "}
+                In Simple Mode, use the{" "}
                 <strong style={{ color: "var(--text-secondary)" }}>Advanced Configuration</strong>{" "}
-                accordion to tweak constants like overhead multiplier, hours recovered fraction, or
-                weeks per year — or enter a custom weekly cost formula.
+                accordion to tune overhead multiplier, hours recovered fraction, weeks per year, or
+                enter a custom weekly cost formula. In Business Deep Dive, open{" "}
+                <strong style={{ color: "var(--text-secondary)" }}>Configure Formulas</strong> to
+                override how profit, savings, and ROI are calculated.
               </p>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 Use the{" "}
                 <strong style={{ color: "var(--text-secondary)" }}>currency selector</strong> in the
                 header to display all values in your local currency, and the{" "}
                 <strong style={{ color: "var(--text-secondary)" }}>S / M / L</strong> buttons to
-                adjust text size.
+                adjust text size. Both modes support{" "}
+                <strong style={{ color: "var(--text-secondary)" }}>Excel and PDF export</strong>.
               </p>
             </Section>
 
@@ -149,17 +149,22 @@ export default function AboutPage() {
                 <Card
                   icon={TrendingUp}
                   title="Real-time ROI verdict"
-                  body="Instantly tells you whether automation is a no-brainer, marginal, or a money-loser at your current rates."
+                  body="Instantly tells you whether automation is a no-brainer, marginal, or a money-loser — no submit button, no waiting."
                 />
                 <Card
                   icon={Brain}
                   title="Smart recommendation"
-                  body="A contextual note explains what the numbers mean in plain language so you can make a confident decision."
+                  body="A plain-language note tells you what to actually do with the numbers so you can make a confident decision."
                 />
                 <Card
-                  icon={SlidersHorizontal}
-                  title="Advanced formula mode"
-                  body="Power users can override the default weekly-cost formula with any arithmetic expression and tune overhead multipliers."
+                  icon={BarChart3}
+                  title="Full profit & margin analysis"
+                  body="Business Deep Dive computes manual profit, automation profit, profit delta, and margin improvement — not just savings."
+                />
+                <Card
+                  icon={FileSpreadsheet}
+                  title="Excel & PDF export"
+                  body="Download your full analysis as a formatted spreadsheet or a structured A4 PDF report — ready to share with a client or team."
                 />
                 <Card
                   icon={Globe}
@@ -169,12 +174,17 @@ export default function AboutPage() {
                 <Card
                   icon={ShieldCheck}
                   title="100% private"
-                  body="Everything runs in your browser. No data is sent to any server. Preferences are stored only in your local storage."
+                  body="Everything runs in your browser. No data is sent to any server. Preferences are saved only in your local storage."
+                />
+                <Card
+                  icon={SlidersHorizontal}
+                  title="Configurable formulas"
+                  body="Override any formula — weekly cost, profit, savings, ROI — using safe arithmetic expressions with named variables."
                 />
                 <Card
                   icon={CheckCircle2}
                   title="Break-even analysis"
-                  body="When ROI is negative, the tool tells you how much your manual workload would need to grow before automation pays off."
+                  body="When ROI is negative, the tool tells you exactly how much your workload would need to grow before automation pays off."
                 />
               </div>
             </Section>
@@ -182,34 +192,34 @@ export default function AboutPage() {
             {/* What it does NOT do */}
             <Section title="What it does not do">
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                This tool is intentionally focused. It is not a full business-case builder:
+                The tool is intentionally focused on financial ROI. It is not a full business-case builder:
               </p>
               <div className="flex flex-col gap-3">
                 <Card
                   icon={XCircle}
                   title="No setup or implementation costs"
-                  body="One-time costs to build, configure, or migrate your automations are not factored in. Add those to the automation cost field manually if needed."
+                  body="One-time costs to build, configure, or migrate your automations are not included. Add them as a line item in the Business Deep Dive's automation card if needed."
                   iconBg="var(--danger-light)"
                   iconColor="var(--danger)"
                 />
                 <Card
                   icon={XCircle}
                   title="No error or rework savings"
-                  body="Automation often reduces human error. This indirect saving is real but hard to quantify — the calculator does not model it."
+                  body="Automation often eliminates human error and the cost of fixing it. This indirect saving is real but hard to quantify — the calculator does not model it."
                   iconBg="var(--danger-light)"
                   iconColor="var(--danger)"
                 />
                 <Card
                   icon={XCircle}
-                  title="No scaling effects"
-                  body="As your workload grows, your manual cost rises but the automation cost stays flat. This compounding benefit is not projected dynamically."
+                  title="No compounding scale effects"
+                  body="As your workload grows, manual cost rises but automation cost stays flat. This growing advantage is not projected forward dynamically."
                   iconBg="var(--danger-light)"
                   iconColor="var(--danger)"
                 />
                 <Card
                   icon={XCircle}
-                  title="No tax or depreciation"
-                  body="Software subscription costs may be deductible depending on your jurisdiction. This tool does not give tax or accounting advice."
+                  title="No tax or depreciation advice"
+                  body="Software subscription costs may be deductible in your jurisdiction. This tool does not give tax, legal, or accounting advice."
                   iconBg="var(--danger-light)"
                   iconColor="var(--danger)"
                 />
@@ -225,7 +235,7 @@ export default function AboutPage() {
                 Ready to see your numbers?
               </p>
               <p className="text-sm text-white/80 max-w-sm">
-                Takes 30 seconds. No account needed.
+                Quick estimate in 30 seconds. Full analysis in under 5 minutes. No account needed.
               </p>
               <Link
                 href="/"

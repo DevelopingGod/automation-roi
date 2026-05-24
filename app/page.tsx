@@ -32,16 +32,15 @@ export default function Home() {
               className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl"
               style={{ color: "var(--text-primary)" }}
             >
-              Stop Guessing.{" "}
-              <span style={{ color: "var(--accent)" }}>Quantify</span> the Cost
-              of Manual Work.
+              Every Hour Has a Price.{" "}
+              <span style={{ color: "var(--accent)" }}>Do You Know Yours?</span>
             </h1>
             <p
               className="mx-auto mt-4 max-w-xl text-base leading-relaxed sm:text-lg"
               style={{ color: "var(--text-muted)" }}
             >
-              See exactly how much money repetitive tasks drain from your business
-              — and whether automating with n8n, Make.com, or Zapier actually pays off.
+              Put a number on what manual work actually costs you — then see whether
+              automating with n8n, Make.com, or Zapier genuinely pays off.
             </p>
             <div className="mt-6">
               <StarCounter />
